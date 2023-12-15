@@ -1,0 +1,52 @@
+{
+  "tab": {
+    "search": "搜索",
+    "new": "添加并投票"
+  },
+  "form": {
+    "title": "标题",
+    "artist": "曲师",
+    "url": "链接",
+    "confirm": "我确认下面的 {count} 个结果没有该歌曲",
+    "submit": "提交"
+  },
+  "titleVoted": "已投票",
+  "titleSearchResult": "搜索结果",
+  "titleSongList": "歌曲列表",
+  "card": {
+    "votedTitle": "支持票",
+    "votedEmptyHit": "暂无投票",
+    "actions": {
+      "vote": "投票",
+      "unvote": "取消投票"
+    }
+  },
+  "alert": {
+    "voteRunOut": "你已经用完了所有的 {count} 张选票",
+    "voteNoSlot": "你尚不符合投票条件",
+    "voteClosed": "投票已关闭"
+  },
+  "toast": {
+    "voteSuccess": {
+      "title": "投票成功"
+    },
+    "voteFailed": {
+      "title": "投票失败",
+      "description": "投票时遇到错误, 请刷新重试. 错误: {error}"
+    },
+    "unvoteSuccess": {
+      "title": "取消投票成功"
+    },
+    "unvoteFailed": {
+      "title": "取消投票失败",
+      "description": "取消投票时遇到错误, 请刷新重试. 错误: {error}"
+    },
+    "nominateSuccess": {
+      "title": "添加歌曲成功"
+    },
+    "nominateFailed": {
+      "title": "添加歌曲失败",
+      "description": "添加歌曲时遇到错误, 请刷新重试. 错误: {error}"
+    }
+  }
+}

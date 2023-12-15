@@ -1,0 +1,21 @@
+{
+  "title": "Newspaper Cup",
+  "signIn": "登录",
+  "signWith": "使用 {0} 登录",
+  "signOut": "登出",
+  "signToast": {
+    "success": {
+      "title": "欢迎回来",
+      "description": "已登入 osu! 账号: {name}"
+    },
+    "error": {
+      "title": "登录失败",
+      "description": "遇到错误: {error}"
+    }
+  },
+  "navbar": {
+    "vote": "选曲投票",
+    "submit": "提交作品",
+    "result": "结果公布"
+  }
+}

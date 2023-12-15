@@ -1,0 +1,31 @@
+{
+  "contestName": "Newspaper Cup 2024",
+  "contestDescription": "Newspaper Cup 是旨在吸引更多玩家加入作图，展现与提高作图技巧的新人mapper作图比赛。本届比赛将延续往届传统，采用“全民参加，新人拿奖”的比赛模式。",
+  "contestState": {
+    "preparation": {
+      "name": "比赛预告",
+      "date": "2023年12月09日",
+      "btn": "浏览比赛预告"
+    },
+    "voting": {
+      "name": "征集选曲",
+      "date": "2024年元旦",
+      "btn": "选曲投票"
+    },
+    "submitting": {
+      "name": "选手作图",
+      "date": "01月20日",
+      "btn": "提交作品"
+    },
+    "rating": {
+      "name": "评委打分",
+      "date": "03月04日",
+      "btn": "浏览比赛帖子"
+    },
+    "result": {
+      "name": "结果公布",
+      "date": "04月01日",
+      "btn": "浏览结果"
+    }
+  }
+}
