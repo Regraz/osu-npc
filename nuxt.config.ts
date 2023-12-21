@@ -58,6 +58,10 @@ export default defineNuxtConfig({
     osuClientSecret: '',
     osuRedirectUri: '',
 
+    // database
+    tursoUrl: '',
+    tursoAuthToken: '',
+
     public: {
       // state (NUXT_PUBLIC_RACE_STATE): 'preparation' | 'voting' | 'submitting' | 'rating' | 'result'
       raceState: 'voting',

@@ -1,16 +1,20 @@
-import { drizzle } from 'drizzle-orm/better-sqlite3'
-import Database from 'better-sqlite3'
+import { drizzle } from 'drizzle-orm/libsql'
+import { createClient } from '@libsql/client'
 
 import * as dbSchema from '../modules/db-schema.generated'
 
-import { logger as rawLogger } from './logger'
+const runtimeConfig = useRuntimeConfig()
 
-const logger = rawLogger.withTag('sql')
-
-export const sqlite = new Database('dev.sqlite', {
-  fileMustExist: true,
-  verbose: process.dev ? logger.log : undefined,
-})
+export const sqlite = createClient(
+  process.dev
+    ? {
+        url: 'file:dev.sqlite',
+      }
+    : {
+        url: runtimeConfig.tursoUrl,
+        authToken: runtimeConfig.tursoAuthToken,
+      },
+)
 
 export const db = drizzle(sqlite, {
   schema: dbSchema,

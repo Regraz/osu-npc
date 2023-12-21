@@ -1,5 +1,5 @@
 import { lucia } from 'lucia'
-import { betterSqlite3 } from '@lucia-auth/adapter-sqlite'
+import { libsql } from '@lucia-auth/adapter-sqlite'
 import { osu } from '@lucia-auth/oauth/providers'
 import { h3 } from 'lucia/middleware'
 
@@ -11,7 +11,7 @@ import { filterKeys, keysToCamelCase } from './object'
 const runtimeConfig = useRuntimeConfig()
 
 export const auth = lucia({
-  adapter: betterSqlite3(sqlite, {
+  adapter: libsql(sqlite, {
     user: 'user',
     session: 'user_session',
     key: 'user_key',

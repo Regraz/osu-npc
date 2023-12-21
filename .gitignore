@@ -23,5 +23,6 @@ logs
 .env.*
 !.env.example
 
-# dev database
+# database
 dev.sqlite
+drizzle-deploy.config.ts

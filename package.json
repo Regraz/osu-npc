@@ -11,9 +11,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "db:gen": "drizzle-kit generate:sqlite",
-    "db:pull": "drizzle-kit pull:sqlite",
     "db:push": "drizzle-kit push:sqlite",
-    "db:drop": "drizzle-kit drop",
+    "db:deploy": "drizzle-kit push:sqlite --config=drizzle-deploy.config.ts",
     "db:upgrade": "drizzle-kit up:sqlite",
     "db:check": "drizzle-kit check:sqlite",
     "db:studio": "drizzle-kit studio --port 2999 --verbose"
@@ -30,6 +29,7 @@
     "@antfu/eslint-config": "^1.2.1",
     "@graphql-codegen/cli": "^5.0.0",
     "@graphql-codegen/client-preset": "^4.1.0",
+    "@libsql/client": "0.4.0-pre.5",
     "@nuxt/devtools": "latest",
     "@nuxtjs/color-mode": "^3.3.2",
     "@pothos/core": "^3.40.1",
