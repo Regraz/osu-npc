@@ -1,12 +1,10 @@
-import type { Config } from 'tailwindcss'
-import colors from 'tailwindcss/colors.js'
-import daisyui from 'daisyui'
-import daisyuiThemes from 'daisyui/src/theming/themes.js'
+const themeColor = 'indigo'
 
-export const themeColor: keyof typeof colors = 'indigo'
+const colors = require('tailwindcss/colors')
 
-export const light = {
-  ...daisyuiThemes.light,
+const light = {
+  ...require('daisyui/src/theming/themes').light,
+
   'primary': colors[themeColor][500],
   'primary-content': colors.white,
   'secondary': colors.purple[500],
@@ -27,8 +25,10 @@ export const light = {
   'base-200': colors.zinc[200],
   'base-300': colors.zinc[300],
 }
-export const dark = {
-  ...daisyuiThemes.dracula,
+
+const dark = {
+  ...require('daisyui/src/theming/themes').dracula,
+
   'primary': colors[themeColor][400],
   'secondary': colors.purple[400],
   'accent': colors.cyan[400],
@@ -43,7 +43,8 @@ export const dark = {
   'base-300': colors.zinc[700],
 }
 
-export default <Partial<Config>> {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     './components/**/*.{js,vue,ts}',
     './composables/**/*.{js,vue,ts}',
@@ -58,7 +59,7 @@ export default <Partial<Config>> {
       center: true, // https://tailwindcss.com/docs/container#centering-by-default
     },
   },
-  plugins: [daisyui],
+  plugins: [require('daisyui')],
   daisyui: {
     themes: [
       {
