@@ -3,6 +3,12 @@ definePageMeta({
   layout: 'blank',
 })
 
+const { t } = useLocales()
+
+useSeoMeta({
+  title: t('general.signIn'),
+})
+
 const { expect } = useAuth()
 onMounted(() => {
   nextTick(async () => {

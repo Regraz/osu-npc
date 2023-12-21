@@ -90,6 +90,10 @@ const { raceState } = useRace()
 const toast = useToast()
 const { t } = useLocales()
 
+useSeoMeta({
+  title: t('vote.title'),
+})
+
 const adding = ref(false)
 const title = ref('')
 const artist = ref('')

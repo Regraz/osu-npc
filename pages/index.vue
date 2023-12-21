@@ -62,9 +62,14 @@ const btnData = computed(() => {
           <p class="py-6">
             {{ $t('home.contestDescription') }}
           </p>
-          <NuxtLink class="btn btn-primary" :href="btnData.link">
-            {{ btnData.text }}
-          </NuxtLink>
+          <div class="grid sm:flex gap-2">
+            <NuxtLink class="btn btn-primary" :href="btnData.link">
+              {{ btnData.text }}
+            </NuxtLink>
+            <NuxtLink class="btn" href="https://osu.ppy.sh/community/forums/topics/1854946?n=1">
+              {{ $t('home.viewContestBtn') }}
+            </NuxtLink>
+          </div>
         </div>
       </div>
     </div>

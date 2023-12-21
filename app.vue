@@ -5,6 +5,13 @@ const route = useRoute()
 const toast = useToast()
 const origin = route.query.origin?.toString()
 
+useSeoMeta({
+  titleTemplate: title =>
+    title
+      ? `${title} - ${t('general.title')}`
+      : t('general.title'),
+})
+
 const { load } = useAuthWritable()
 const oauthChannel = useOAuthChannel()
 watch(oauthChannel, (value) => {
