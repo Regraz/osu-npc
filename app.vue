@@ -26,7 +26,12 @@ const oauthChannel = useOAuthChannel()
 watch(oauthChannel, (value) => {
   if (value?.state === 'success') {
     load(value.user)
-    router.push(origin ?? '/')
+    if (origin) {
+      router.push(origin)
+    }
+    else if (route.name === 'login') {
+      router.push('/')
+    }
     toast.add({
       title: t('general.signToast.success.title'),
       // description: `已登入 osu! 账号: ${value.user.name}`,

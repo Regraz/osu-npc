@@ -103,7 +103,7 @@ const removeSongAdminMutation = gql(`
   }
 `)
 
-const { user } = useAuth()
+const { user, auth } = useAuth()
 const { raceState } = useRace()
 const toast = useToast()
 const { t } = useLocales()
@@ -470,6 +470,15 @@ async function removeSongAdmin(songId: string) {
       <span v-else>
         {{ $t('vote.alert.voteNoSlot') }}
       </span>
+
+      <NuxtLink
+        v-if="auth.state === 'unauthenticated'"
+        class="btn btn-sm btn-ghost"
+        to="/api/session/oauth2/osu"
+        target="_blank"
+      >
+        {{ $t('general.signIn') }}
+      </NuxtLink>
     </div>
     <div v-if="raceState !== 'voting'" role="alert" class="alert alert-warning mt-4 shadow-lg">
       <Icon name="mdi:alert-circle-outline" class="w-5 h-5" />
