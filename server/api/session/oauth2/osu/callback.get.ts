@@ -111,7 +111,8 @@ export default defineEventHandler(async (event) => {
           id: user.userId,
           name: user.name,
           avatar: user.avatar,
-          role: user.role ?? [],
+          voteSlots: user.voteSlots,
+          role: JSON.parse(user.role as unknown as string ?? '[]') as string[],
           disabled: user.disabled,
         },
         provider: 'osu',
@@ -143,6 +144,7 @@ function oauthResponse(
       id: string
       name?: string | null | undefined
       avatar?: string | null | undefined
+      voteSlots?: number | null | undefined
       role: string[]
       disabled?: boolean | null | undefined
     }
