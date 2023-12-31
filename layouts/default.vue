@@ -9,5 +9,6 @@ import Blank from './blank.vue'
       <slot />
     </Blank>
     <div class="flex-1" />
+    <Footer />
   </div>
 </template>
