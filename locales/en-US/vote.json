@@ -19,13 +19,13 @@
     "votedEmptyHit": "No votes yet",
     "actions": {
       "vote": "Vote",
-      "unvote": "Cancel vote",
+      "unvote": "Cancel vote"
     }
   },
   "alert": {
     "voteRunOut": "You are not allowed to vote for more than {count} songs!",
     "voteNoSlot": "You are not allowed to vote.",
-    "voteClosed": "Voting is closed.",
+    "voteClosed": "Voting is closed."
   },
   "toast": {
     "voteSuccess": {
