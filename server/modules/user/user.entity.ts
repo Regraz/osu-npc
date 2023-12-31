@@ -1,4 +1,5 @@
 import { builder, defineEntity } from '../pothos'
+import { SongEntity } from '../song/song.entity'
 import { VoteEntity } from '../vote/vote.entity'
 import type { user } from './user.db'
 
@@ -28,6 +29,14 @@ export const UserEntity = defineEntity((builder) => {
         resolve: (root, _args, { db }) =>
           db.query.vote.findMany({
             where: (vote, { eq }) => eq(vote.userId, root.id),
+          }),
+      }),
+
+      nominatedSongs: t.field({
+        type: [SongEntity],
+        resolve: (root, _args, { db }) =>
+          db.query.song.findMany({
+            where: (song, { eq }) => eq(song.nominatedByUserId, root.id),
           }),
       }),
     }),

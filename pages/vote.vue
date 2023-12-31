@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useFuse } from '@vueuse/integrations/useFuse'
+import { UserRole } from '~/gql/graphql'
 
 const [DefineSongCard, SongCard] = createReusableTemplate<{ song: Song }>()
 
@@ -79,6 +80,23 @@ const nominateAndVoteMutation = gql(`
             id
             name
           }
+        }
+      }
+    }
+  }
+`)
+
+const removeSongAdminMutation = gql(`
+  mutation removeSongAdmin($songIds: [ID!]!) {
+    removeSong(songIds: $songIds) {
+      id
+      title
+      artist
+      url
+      votes {
+        user {
+          id
+          name
         }
       }
     }
@@ -262,6 +280,36 @@ async function nominateAndVoteSong(artist: string, title: string, url: string) {
     })
   }
 }
+
+// admin only
+async function removeSongAdmin(songId: string) {
+  try {
+    const res = await useMutation(removeSongAdminMutation, {
+      songIds: [songId],
+    })
+    if (res?.removeSong.length === 1) {
+      const index = data.value?.songs.findIndex(({ id }) => id === songId)
+      if (index !== undefined && index !== -1) {
+        data.value?.songs.splice(index, 1)
+      }
+      toast.add({
+        title: 'Remove song success',
+        description: res.removeSong[0].title,
+        color: 'green',
+      })
+    }
+    else {
+      throw new Error('Unknown error')
+    }
+  }
+  catch (error) {
+    toast.add({
+      title: 'Failed to remove song',
+      description: `Failed when removing song: ${(error as Error).message}`,
+      color: 'red',
+    })
+  }
+}
 </script>
 
 <template>
@@ -304,6 +352,16 @@ async function nominateAndVoteSong(artist: string, title: string, url: string) {
           </div>
         </div>
         <div v-if="user" class="card-actions justify-end">
+          <template v-if="user?.role.includes(UserRole.Staff)">
+            <button
+              class="btn btn-ghost"
+              @click="removeSongAdmin(song.id)"
+            >
+              ADMIN: Remove Song
+            </button>
+            <div class="flex-1" />
+          </template>
+
           <button
             v-if="song.votes.some(item =>
               user!.id === item.user.id,

@@ -5,6 +5,6 @@ export default {
   out: './server/migrations',
   driver: 'libsql',
   dbCredentials: {
-    url: './dev.sqlite',
+    url: 'file:dev.sqlite',
   },
 } satisfies Config

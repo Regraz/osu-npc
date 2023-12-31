@@ -4,8 +4,13 @@ A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `dat
 scalar Date
 
 type Mutation {
+  banUser(userId: ID!): User
+  giveUserRole(role: UserRole!, userId: ID!): User
   logout: User
   nominateAndVoteSong(songArtist: String!, songTitle: String!, songUrl: String!): Vote
+  removeSong(songIds: [ID!]!): [Song!]!
+  removeUserRole(role: UserRole!, userId: ID!): User
+  unbanUser(userId: ID!): User
   unvoteSong(songId: ID!): Vote
   voteSong(songId: ID!): Vote
 }
@@ -13,6 +18,7 @@ type Mutation {
 type Query {
   me: User
   songs: [Song!]!
+  user(name: String!): User
 }
 
 type Song {
@@ -30,6 +36,7 @@ type User {
   disabled: Boolean
   id: String!
   name: String
+  nominatedSongs: [Song!]!
   role: [UserRole!]!
   voteSlots: Int
   votes: [Vote!]!

@@ -1,3 +1,5 @@
 export * from './session/session.resolver'
+export * from './song/song.admin.resolver'
 export * from './song/song.resolver'
+export * from './user/user.admin.resolver'
 export * from './vote/vote.resolver'
