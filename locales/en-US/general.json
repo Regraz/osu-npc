@@ -1,0 +1,21 @@
+{
+  "title": "Newspaper Cup",
+  "signIn": "Login",
+  "signWith": "Login with {0} ",
+  "signOut": "Logout",
+  "signToast": {
+    "success": {
+      "title": "Welcome back!",
+      "description": "Successfully logged in as {name}!"
+    },
+    "error": {
+      "title": "Login failed!",
+      "description": "Error: {error}"
+    }
+  },
+  "navbar": {
+    "vote": "Song Voting",
+    "submit": "Submission",
+    "result": "Results"
+  }
+}
