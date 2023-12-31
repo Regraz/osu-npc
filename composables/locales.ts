@@ -2,7 +2,7 @@ import { useI18n } from 'vue-i18n'
 
 export function useLocales() {
   const locales: Array<{ name: string, code: string, loaded?: boolean }> = [
-    // { name: 'English', code: 'en-US' },
+    { name: 'English', code: 'en-US' },
     { name: '中文（简体）', code: 'zh-CN' },
   ]
 

@@ -1,0 +1,53 @@
+{
+  "title": "Song Voting",
+  "tab": {
+    "search": "Search",
+    "new": "Add and vote"
+  },
+  "form": {
+    "title": "Title",
+    "artist": "Artist",
+    "url": "Link",
+    "confirm": "I confirm none of the {count} results below is the song I want.",
+    "submit": "Submit"
+  },
+  "titleVoted": "Voted",
+  "titleSearchResult": "Search Result",
+  "titleSongList": "Song List",
+  "card": {
+    "votedTitle": "Vote",
+    "votedEmptyHit": "No votes yet",
+    "actions": {
+      "vote": "Vote",
+      "unvote": "Cancel vote",
+    }
+  },
+  "alert": {
+    "voteRunOut": "You are not allowed to vote for more than {count} songs!",
+    "voteNoSlot": "You are not allowed to vote.",
+    "voteClosed": "Voting is closed.",
+  },
+  "toast": {
+    "voteSuccess": {
+      "title": "Vote success!"
+    },
+    "voteFailed": {
+      "title": "Vote failed.",
+      "description": "An error occurred while voting, please refresh and try again. Error: {error}"
+    },
+    "unvoteSuccess": {
+      "title": "Cancel vote success!"
+    },
+    "unvoteFailed": {
+      "title": "Cancel vote failed.",
+      "description": "An error occurred while cancelling vote, please refresh and try again. Error: {error}"
+    },
+    "nominateSuccess": {
+      "title": "Add song success!"
+    },
+    "nominateFailed": {
+      "title": "Add song failed.",
+      "description": "An error occurred while adding the song, please refresh and try again. Error: {error}"
+    }
+  }
+}

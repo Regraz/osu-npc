@@ -1,0 +1,32 @@
+{
+  "contestName": "Newspaper Cup 2024",
+  "contestDescription": "Newspaper Cup is a mapping contest aiming to attract more players to join mapping and to show and improve the mapping skills of new mappers. This contest will continue the tradition of previous contests and adopt the \"everyone can participate, but only new mappers can win prizes\" competition model.",
+  "contestState": {
+    "preparation": {
+      "name": "Contest Announcement",
+      "date": "2023.12.09",
+      "btn": "Announcement Thread"
+    },
+    "voting": {
+      "name": "Song Nomination",
+      "date": "2024.01.01",
+      "btn": "Song Voting"
+    },
+    "submitting": {
+      "name": "Beatmapping",
+      "date": "01.20",
+      "btn": "Submission Site"
+    },
+    "rating": {
+      "name": "Judging",
+      "date": "03.04",
+      "btn": "Contest Thread"
+    },
+    "result": {
+      "name": "Results Announcement",
+      "date": "04.01",
+      "btn": "Announcement Thread"
+    }
+  },
+  "viewContestBtn": "Announcement Thread"
+}
