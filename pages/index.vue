@@ -8,7 +8,7 @@ const {
   isResultOpened,
 } = useRace()
 
-const timeline = [{
+const timeline = computed(() => [{
   content: t('home.contestState.preparation.name'),
   subContent: t('home.contestState.preparation.date'),
   btn: t('home.contestState.preparation.btn'),
@@ -35,12 +35,12 @@ const timeline = [{
   subContent: t('home.contestState.result.date'),
   btn: t('home.contestState.result.btn'),
   active: isResultOpened.value,
-}]
+}])
 
 const btnData = computed(() => {
-  let link = timeline[0].link
-  let text = timeline[0].btn
-  for (const item of timeline) {
+  let link = timeline.value[0].link
+  let text = timeline.value[0].btn
+  for (const item of timeline.value) {
     if (item.active) {
       link = item.link
       text = item.btn
